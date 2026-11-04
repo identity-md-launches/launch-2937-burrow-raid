@@ -1,0 +1,21 @@
+{
+  "limitBytes": 8388608,
+  "totalBytes": 3601633,
+  "remainingBytes": 4786975,
+  "fileCount": 72,
+  "groups": {
+    "src": 112561,
+    "shared": 11486,
+    "server": 50857,
+    "scripts": 7833,
+    "tests": 54926,
+    "public": 469990,
+    "dist": 1410520,
+    "server-build": 55700,
+    "artifacts": 1283743,
+    "root files": 144017
+  },
+  "includesThisReport": true,
+  "dependencyArchives": 0,
+  "submodules": 0
+}

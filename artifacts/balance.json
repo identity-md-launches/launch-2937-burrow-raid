@@ -1,0 +1,173 @@
+{
+  "method": "Deterministic fixed-step simulation; active pilot uses avoidance AI and available skills. Live runs receive zero wheel bonus. Idle pilot sends no input; two bot companions remain active. This is a balance regression, not a human playtest.",
+  "results": [
+    {
+      "mode": "practice",
+      "role": "fighter",
+      "strategy": "active",
+      "outcome": "victory",
+      "seconds": 74.15,
+      "bossHealth": 0,
+      "partyHealth": [
+        110,
+        150,
+        100
+      ],
+      "remainingEnergy": 53
+    },
+    {
+      "mode": "practice",
+      "role": "fighter",
+      "strategy": "idle",
+      "outcome": "defeat",
+      "seconds": 180,
+      "bossHealth": 1693,
+      "partyHealth": [
+        44,
+        150,
+        100
+      ],
+      "remainingEnergy": 64
+    },
+    {
+      "mode": "practice",
+      "role": "guardian",
+      "strategy": "active",
+      "outcome": "victory",
+      "seconds": 114.85,
+      "bossHealth": 0,
+      "partyHealth": [
+        150,
+        110,
+        100
+      ],
+      "remainingEnergy": 41
+    },
+    {
+      "mode": "practice",
+      "role": "guardian",
+      "strategy": "idle",
+      "outcome": "defeat",
+      "seconds": 180,
+      "bossHealth": 564,
+      "partyHealth": [
+        0,
+        110,
+        100
+      ],
+      "remainingEnergy": 54
+    },
+    {
+      "mode": "practice",
+      "role": "medic",
+      "strategy": "active",
+      "outcome": "victory",
+      "seconds": 117.05,
+      "bossHealth": 0,
+      "partyHealth": [
+        100,
+        110,
+        150
+      ],
+      "remainingEnergy": 42
+    },
+    {
+      "mode": "practice",
+      "role": "medic",
+      "strategy": "idle",
+      "outcome": "defeat",
+      "seconds": 180,
+      "bossHealth": 308,
+      "partyHealth": [
+        40,
+        110,
+        150
+      ],
+      "remainingEnergy": 56
+    },
+    {
+      "mode": "live",
+      "role": "fighter",
+      "strategy": "active",
+      "outcome": "victory",
+      "seconds": 82.65,
+      "bossHealth": 0,
+      "partyHealth": [
+        110,
+        150,
+        100
+      ],
+      "remainingEnergy": 1
+    },
+    {
+      "mode": "live",
+      "role": "fighter",
+      "strategy": "idle",
+      "outcome": "defeat",
+      "seconds": 180,
+      "bossHealth": 1693,
+      "partyHealth": [
+        44,
+        150,
+        100
+      ],
+      "remainingEnergy": 64
+    },
+    {
+      "mode": "live",
+      "role": "guardian",
+      "strategy": "active",
+      "outcome": "victory",
+      "seconds": 120.15,
+      "bossHealth": 0,
+      "partyHealth": [
+        150,
+        110,
+        100
+      ],
+      "remainingEnergy": 5
+    },
+    {
+      "mode": "live",
+      "role": "guardian",
+      "strategy": "idle",
+      "outcome": "defeat",
+      "seconds": 180,
+      "bossHealth": 732,
+      "partyHealth": [
+        0,
+        110,
+        100
+      ],
+      "remainingEnergy": 62
+    },
+    {
+      "mode": "live",
+      "role": "medic",
+      "strategy": "active",
+      "outcome": "victory",
+      "seconds": 119.65,
+      "bossHealth": 0,
+      "partyHealth": [
+        100,
+        110,
+        150
+      ],
+      "remainingEnergy": 4
+    },
+    {
+      "mode": "live",
+      "role": "medic",
+      "strategy": "idle",
+      "outcome": "defeat",
+      "seconds": 180,
+      "bossHealth": 528,
+      "partyHealth": [
+        0,
+        110,
+        150
+      ],
+      "remainingEnergy": 64
+    }
+  ]
+}

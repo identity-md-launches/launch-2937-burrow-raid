@@ -1,0 +1,196 @@
+{
+  "generatedAt": "2026-11-04T00:04:10.009Z",
+  "browser": "Playwright Chromium with SwiftShader",
+  "results": [
+    {
+      "name": "Static subpath export, loaded fonts and metadata",
+      "passed": true,
+      "durationMs": 40,
+      "detail": {
+        "base": "/preview/",
+        "fonts": "Fraunces + Nunito Sans"
+      }
+    },
+    {
+      "name": "Automated accessibility audit of the lobby",
+      "passed": true,
+      "durationMs": 1003,
+      "detail": {
+        "violations": 0,
+        "incompleteRules": [
+          "color-contrast"
+        ],
+        "manualScreenReader": false
+      }
+    },
+    {
+      "name": "Lobby responsive layout 320×812",
+      "passed": true,
+      "durationMs": 634,
+      "detail": {
+        "mainAction": {
+          "x": 18,
+          "y": 646.390625,
+          "width": 284,
+          "height": 50
+        }
+      }
+    },
+    {
+      "name": "Lobby responsive layout 390×844",
+      "passed": true,
+      "durationMs": 418,
+      "detail": {
+        "mainAction": {
+          "x": 24,
+          "y": 646.390625,
+          "width": 342,
+          "height": 50
+        }
+      }
+    },
+    {
+      "name": "Lobby responsive layout 768×1024",
+      "passed": true,
+      "durationMs": 750,
+      "detail": {
+        "mainAction": {
+          "x": 24,
+          "y": 537,
+          "width": 300,
+          "height": 52
+        }
+      }
+    },
+    {
+      "name": "Lobby responsive layout 1440×900",
+      "passed": true,
+      "durationMs": 1017,
+      "detail": {
+        "mainAction": {
+          "x": 86.390625,
+          "y": 560,
+          "width": 334,
+          "height": 52
+        }
+      }
+    },
+    {
+      "name": "All roles, truthful co-op limitation, recoverable URL validation",
+      "passed": true,
+      "durationMs": 606
+    },
+    {
+      "name": "Keyboard focus, help dialog trap and focus return",
+      "passed": true,
+      "durationMs": 71
+    },
+    {
+      "name": "Keyboard movement, attack, dodge, skill and pause/resume",
+      "passed": true,
+      "durationMs": 2542,
+      "detail": {
+        "bossHealthBefore": 3586,
+        "bossHealthAfter": 3573
+      }
+    },
+    {
+      "name": "Guardian ability, cooldown feedback and home navigation",
+      "passed": true,
+      "durationMs": 1558
+    },
+    {
+      "name": "Optional audio starts by explicit choice",
+      "passed": true,
+      "durationMs": 549
+    },
+    {
+      "name": "Touch movement and held attack/ability controls",
+      "passed": true,
+      "durationMs": 9009,
+      "detail": {
+        "bossHealthBefore": 3595,
+        "bossHealthAfter": 3586,
+        "physicalDevice": false
+      }
+    },
+    {
+      "name": "Landscape touch HUD keeps controls and health separate",
+      "passed": true,
+      "durationMs": 3970
+    },
+    {
+      "name": "Visibility change clears inputs and pauses solo",
+      "passed": true,
+      "durationMs": 540,
+      "detail": {
+        "method": "Emulated visibility event, explicit resume required"
+      }
+    },
+    {
+      "name": "Reduced motion stops decorative movement and CSS loops",
+      "passed": true,
+      "durationMs": 129
+    },
+    {
+      "name": "Two real browser clients join the same co-op room",
+      "passed": true,
+      "durationMs": 3961,
+      "detail": {
+        "realClients": 2,
+        "botSeats": 1
+      }
+    },
+    {
+      "name": "Synchronized boss attacks and server-side movement visible in both clients",
+      "passed": true,
+      "durationMs": 929
+    },
+    {
+      "name": "Browser reconnect preserves the same authoritative seat",
+      "passed": true,
+      "durationMs": 648
+    },
+    {
+      "name": "Online pause hands control to a bot while the shared fight continues",
+      "passed": true,
+      "durationMs": 1825
+    },
+    {
+      "name": "Victory, replay, defeat and restart reach usable result screens",
+      "passed": true,
+      "durationMs": 7486,
+      "detail": {
+        "outcomes": "Test harness sets authoritative server health to trigger UI outcomes; natural fights tested in simulation"
+      }
+    },
+    {
+      "name": "WebGL context loss offers an honest retry instead of a blank game",
+      "passed": true,
+      "durationMs": 5355
+    },
+    {
+      "name": "Initial WebGL failure disables play and recovers after graphics retry",
+      "passed": true,
+      "durationMs": 807,
+      "detail": {
+        "method": "WebGL context creation deliberately denied, then restored in the browser harness"
+      }
+    },
+    {
+      "name": "Zero uncaught page errors and zero failed local runtime assets",
+      "passed": true,
+      "durationMs": 2,
+      "detail": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "badResources": []
+      }
+    },
+    {
+      "name": "WebKit runtime availability",
+      "passed": null,
+      "limitation": "browserType.launch: \n╔══════════════════════════════════════════════════════╗\n║ Host system is missing dependencies to run browsers. ║\n║ "
+    }
+  ]
+}

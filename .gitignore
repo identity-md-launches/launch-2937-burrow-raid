@@ -1,0 +1,22 @@
+# Submission path budget (8,388,608 bytes maximum):
+# src/ + shared/ + server/ + tests/ + scripts/: 700,000 bytes
+# public/ + dist/: 3,000,000 bytes; server-build/: 200,000 bytes
+# manifests + lock + docs + artifacts/: 2,000,000 bytes
+# Reserved headroom: 2,488,608 bytes. dist/ and server-build/ are deliverables.
+# Explicitly retain deliverables even when a parent ignore excludes build/artifact folders.
+!dist/
+!dist/**
+!server-build/
+!server-build/**
+!artifacts/
+!artifacts/**
+# Keep these exclusions last so retained output paths cannot include nested caches.
+**/node_modules/
+**/.vite/
+**/.cache/
+**/.npm/
+**/coverage/
+**/playwright-report/
+**/test-results/
+test/scratch/
+*.tsbuildinfo

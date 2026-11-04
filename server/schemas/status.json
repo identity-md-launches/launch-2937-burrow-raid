@@ -1,0 +1,1039 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "installationId",
+    "revision",
+    "generatedAt",
+    "measurement",
+    "builder",
+    "oracle",
+    "settlementQueue",
+    "modules"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "installationId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "revision": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "generatedAt": {
+      "$ref": "#/$defs/d0_timestamp"
+    },
+    "measurement": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/d1_measurement"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "builder": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/d3_builderUnavailable"
+        },
+        {
+          "$ref": "#/$defs/d4_builderAvailable"
+        }
+      ]
+    },
+    "oracle": {
+      "$ref": "#/$defs/d10_oracle"
+    },
+    "settlementQueue": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/d12_queueUnavailable"
+        },
+        {
+          "$ref": "#/$defs/d13_queueAvailable"
+        }
+      ]
+    },
+    "signer": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/d15_signer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/d16_publicModuleSnapshot"
+      }
+    }
+  },
+  "$defs": {
+    "d0_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "d2_uint64": {
+      "type": "string",
+      "format": "uint64-decimal"
+    },
+    "d1_measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "freshness",
+        "observedAt",
+        "receivedAt",
+        "staleAfterSeconds",
+        "counterEpoch",
+        "cumulativeWorkUnits",
+        "provenance",
+        "coreStatus",
+        "rpmMilli",
+        "speedMmPerSecond",
+        "distanceMm"
+      ],
+      "properties": {
+        "freshness": {
+          "enum": [
+            "online",
+            "stale"
+          ]
+        },
+        "observedAt": {
+          "$ref": "#/$defs/d0_timestamp"
+        },
+        "receivedAt": {
+          "$ref": "#/$defs/d0_timestamp"
+        },
+        "staleAfterSeconds": {
+          "const": 120
+        },
+        "counterEpoch": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "cumulativeWorkUnits": {
+          "$ref": "#/$defs/d2_uint64"
+        },
+        "provenance": {
+          "enum": [
+            "hardware",
+            "simulated",
+            "replay",
+            "derived"
+          ]
+        },
+        "coreStatus": {
+          "enum": [
+            "IDLE",
+            "ACTIVE",
+            "COUNTER_FAULT"
+          ]
+        },
+        "rpmMilli": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "speedMmPerSecond": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "distanceMm": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      }
+    },
+    "d3_builderUnavailable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "const": "unavailable"
+        },
+        "reason": {
+          "enum": [
+            "no_measurement",
+            "counter_fault",
+            "counter_epoch_unapproved",
+            "round_projection_gap",
+            "oracle_head_unavailable",
+            "round_ineligible"
+          ]
+        }
+      }
+    },
+    "d5_blockProgress": {
+      "type": "string",
+      "format": "uint64-decimal",
+      "maxLength": 9
+    },
+    "d6_workPerThousandBlocks": {
+      "type": "string",
+      "format": "uint64-decimal",
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "d7_hash": {
+      "type": "string",
+      "pattern": "^0x[0-9a-f]{64}$"
+    },
+    "d8_blockUnits": {
+      "type": "string",
+      "format": "uint96-decimal"
+    },
+    "d9_projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lifecycle",
+        "cumulativeWork",
+        "blockHeight",
+        "blockProgress",
+        "workPerThousandBlocks",
+        "firstCompletedBlock",
+        "lastCompletedBlock",
+        "completedBlockCount",
+        "cumulativeBlockUnits"
+      ],
+      "properties": {
+        "lifecycle": {
+          "const": "optimistic"
+        },
+        "cumulativeWork": {
+          "$ref": "#/$defs/d2_uint64"
+        },
+        "blockHeight": {
+          "$ref": "#/$defs/d2_uint64"
+        },
+        "blockProgress": {
+          "$ref": "#/$defs/d5_blockProgress"
+        },
+        "workPerThousandBlocks": {
+          "$ref": "#/$defs/d6_workPerThousandBlocks"
+        },
+        "firstCompletedBlock": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lastCompletedBlock": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "completedBlockCount": {
+          "$ref": "#/$defs/d2_uint64"
+        },
+        "cumulativeBlockUnits": {
+          "$ref": "#/$defs/d8_blockUnits"
+        }
+      }
+    },
+    "d4_builderAvailable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "anchor",
+        "queued",
+        "projected"
+      ],
+      "properties": {
+        "status": {
+          "const": "available"
+        },
+        "anchor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "settledThroughRound",
+            "cumulativeWork",
+            "blockHeight",
+            "blockProgress",
+            "workPerThousandBlocks",
+            "confirmedAt",
+            "transactionHash",
+            "cumulativeBlockUnits"
+          ],
+          "properties": {
+            "settledThroughRound": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "cumulativeWork": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "blockHeight": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "blockProgress": {
+              "$ref": "#/$defs/d5_blockProgress"
+            },
+            "workPerThousandBlocks": {
+              "$ref": "#/$defs/d6_workPerThousandBlocks"
+            },
+            "confirmedAt": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/d0_timestamp"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "transactionHash": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/d7_hash"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "cumulativeBlockUnits": {
+              "$ref": "#/$defs/d8_blockUnits"
+            }
+          }
+        },
+        "queued": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "closedRoundCount",
+            "closedWorkUnits",
+            "openRoundWorkUnits"
+          ],
+          "properties": {
+            "closedRoundCount": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "closedWorkUnits": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "openRoundWorkUnits": {
+              "$ref": "#/$defs/d2_uint64"
+            }
+          }
+        },
+        "projected": {
+          "$ref": "#/$defs/d9_projection"
+        }
+      }
+    },
+    "d11_latestClosure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "firstRound",
+        "lastRound",
+        "roundCount",
+        "acceptedAt"
+      ],
+      "properties": {
+        "firstRound": {
+          "$ref": "#/$defs/d2_uint64"
+        },
+        "lastRound": {
+          "$ref": "#/$defs/d2_uint64"
+        },
+        "roundCount": {
+          "$ref": "#/$defs/d2_uint64"
+        },
+        "acceptedAt": {
+          "$ref": "#/$defs/d0_timestamp"
+        }
+      }
+    },
+    "d10_oracle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "reason",
+        "latestAcceptedAt",
+        "latestClosure"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "accepted",
+            "stale",
+            "blocked",
+            "unavailable"
+          ]
+        },
+        "reason": {
+          "enum": [
+            null,
+            "no_measurement",
+            "counter_fault",
+            "counter_epoch_unapproved",
+            "round_projection_gap",
+            "oracle_head_unavailable"
+          ]
+        },
+        "latestAcceptedAt": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/d0_timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "latestClosure": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/d11_latestClosure"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "d12_queueUnavailable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "const": "unavailable"
+        },
+        "reason": {
+          "enum": [
+            "oracle_head_unavailable",
+            "round_projection_gap",
+            "round_ineligible"
+          ]
+        }
+      }
+    },
+    "d14_submission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "submissionId",
+        "lifecycle",
+        "previousSettledThroughRound",
+        "settledThroughRound",
+        "roundCount",
+        "activeRoundCount",
+        "expected",
+        "transactionHash",
+        "createdAt",
+        "submittedAt",
+        "confirmedAt",
+        "terminalAt",
+        "changedAt",
+        "outcomeCode"
+      ],
+      "properties": {
+        "submissionId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "lifecycle": {
+          "enum": [
+            "preparing",
+            "submitted",
+            "retrying",
+            "confirmed",
+            "reverted",
+            "superseded"
+          ]
+        },
+        "previousSettledThroughRound": {
+          "$ref": "#/$defs/d2_uint64"
+        },
+        "settledThroughRound": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            {
+              "not": {
+                "const": "0"
+              }
+            }
+          ]
+        },
+        "roundCount": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            {
+              "not": {
+                "const": "0"
+              }
+            }
+          ]
+        },
+        "activeRoundCount": {
+          "$ref": "#/$defs/d2_uint64"
+        },
+        "expected": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "firstCompletedBlock",
+            "lastCompletedBlock",
+            "completedBlockCount",
+            "cumulativeWork",
+            "blockHeight",
+            "blockProgress",
+            "workPerThousandBlocks",
+            "cumulativeBlockUnits"
+          ],
+          "properties": {
+            "firstCompletedBlock": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/d2_uint64"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "lastCompletedBlock": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/d2_uint64"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "completedBlockCount": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "cumulativeWork": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "blockHeight": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "blockProgress": {
+              "$ref": "#/$defs/d5_blockProgress"
+            },
+            "workPerThousandBlocks": {
+              "$ref": "#/$defs/d6_workPerThousandBlocks"
+            },
+            "cumulativeBlockUnits": {
+              "$ref": "#/$defs/d8_blockUnits"
+            }
+          }
+        },
+        "transactionHash": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/d7_hash"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "createdAt": {
+          "$ref": "#/$defs/d0_timestamp"
+        },
+        "submittedAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/d0_timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confirmedAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/d0_timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "terminalAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/d0_timestamp"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "changedAt": {
+          "$ref": "#/$defs/d0_timestamp"
+        },
+        "outcomeCode": {
+          "oneOf": [
+            {
+              "enum": [
+                "transaction_reverted",
+                "authorization_superseded",
+                "canonical_external_advance"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "d13_queueAvailable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "state",
+        "settlementEnabled",
+        "reporterEnvironmentEnabled",
+        "buffered",
+        "projected",
+        "incidentOpen",
+        "blockedReason",
+        "lastRun",
+        "latestSubmission"
+      ],
+      "properties": {
+        "status": {
+          "const": "available"
+        },
+        "state": {
+          "enum": [
+            "disabled",
+            "empty",
+            "ready",
+            "preparing",
+            "submitted",
+            "retrying",
+            "blocked",
+            "stale"
+          ]
+        },
+        "settlementEnabled": {
+          "type": "boolean"
+        },
+        "reporterEnvironmentEnabled": {
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "buffered": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "firstRound",
+            "lastRound",
+            "roundCount",
+            "activeRoundCount",
+            "workUnits"
+          ],
+          "properties": {
+            "firstRound": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/d2_uint64"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "lastRound": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/d2_uint64"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "roundCount": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "activeRoundCount": {
+              "$ref": "#/$defs/d2_uint64"
+            },
+            "workUnits": {
+              "$ref": "#/$defs/d2_uint64"
+            }
+          }
+        },
+        "projected": {
+          "$ref": "#/$defs/d9_projection"
+        },
+        "incidentOpen": {
+          "type": "boolean"
+        },
+        "blockedReason": {
+          "oneOf": [
+            {
+              "enum": [
+                "settlement_incident",
+                "external_anomalous"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lastRun": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "startedAt",
+                "finishedAt",
+                "result"
+              ],
+              "properties": {
+                "startedAt": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/d0_timestamp"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "finishedAt": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/$defs/d0_timestamp"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "result": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 128
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "latestSubmission": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/d14_submission"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "d15_signer": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "algorithm",
+            "keySlot",
+            "enrolledAt",
+            "lastVerifiedAt"
+          ],
+          "properties": {
+            "kind": {
+              "const": "trust-m"
+            },
+            "algorithm": {
+              "const": "ecdsa-p256-sha256"
+            },
+            "keySlot": {
+              "enum": [
+                "0xE0F1",
+                "0xE0F2",
+                "0xE0F3"
+              ]
+            },
+            "enrolledAt": {
+              "$ref": "#/$defs/d0_timestamp"
+            },
+            "lastVerifiedAt": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/d0_timestamp"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "lastSignature": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9+/]{86}==$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "algorithm",
+            "keySlot",
+            "enrolledAt",
+            "lastVerifiedAt"
+          ],
+          "properties": {
+            "kind": {
+              "const": "software-ecdsa"
+            },
+            "algorithm": {
+              "const": "ecdsa-p256-sha256"
+            },
+            "keySlot": {
+              "type": "null"
+            },
+            "enrolledAt": {
+              "$ref": "#/$defs/d0_timestamp"
+            },
+            "lastVerifiedAt": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/d0_timestamp"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "lastSignature": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9+/]{86}==$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "algorithm",
+            "keySlot",
+            "enrolledAt",
+            "lastVerifiedAt"
+          ],
+          "properties": {
+            "kind": {
+              "const": "ed25519"
+            },
+            "algorithm": {
+              "const": "ed25519"
+            },
+            "keySlot": {
+              "type": "null"
+            },
+            "enrolledAt": {
+              "$ref": "#/$defs/d0_timestamp"
+            },
+            "lastVerifiedAt": {
+              "oneOf": [
+                {
+                  "$ref": "#/$defs/d0_timestamp"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "lastSignature": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9+/]{86}==$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "d17_dateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "d16_publicModuleSnapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "instanceId",
+        "moduleType",
+        "driverId",
+        "moduleVersion",
+        "schemaVersion",
+        "state",
+        "observedAt",
+        "provenance",
+        "health",
+        "data"
+      ],
+      "properties": {
+        "instanceId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "moduleType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "driverId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "moduleVersion": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+        },
+        "schemaVersion": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "state": {
+          "enum": [
+            "disabled",
+            "starting",
+            "ready",
+            "degraded",
+            "faulted",
+            "stopped"
+          ]
+        },
+        "observedAt": {
+          "$ref": "#/$defs/d17_dateTime"
+        },
+        "provenance": {
+          "enum": [
+            "hardware",
+            "simulated",
+            "replay",
+            "derived"
+          ]
+        },
+        "health": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "checkedAt"
+          ],
+          "properties": {
+            "message": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 512
+            },
+            "code": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 128
+            },
+            "checkedAt": {
+              "$ref": "#/$defs/d17_dateTime"
+            }
+          }
+        },
+        "data": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "$comment": "Public response structure from source snapshot 2454d346d25e5b9dc48af7e547ce1038b6fdb5cc. See endpoint notes for semantic constraints."
+}

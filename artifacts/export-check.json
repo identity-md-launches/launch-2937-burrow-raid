@@ -1,0 +1,12 @@
+{
+  "relativeRuntimeAssetReferencesChecked": 12,
+  "missingAssets": 0,
+  "publicAssetCopies": "byte-identical to dist",
+  "socialImage": {
+    "width": 1200,
+    "height": 630
+  },
+  "documentationFileLinks": "all valid at final check",
+  "privateMachinePathsOrTaskRpcEndpointInDeliverables": 0,
+  "method": "Worker Node assertions and scoped source search; no independent certification."
+}

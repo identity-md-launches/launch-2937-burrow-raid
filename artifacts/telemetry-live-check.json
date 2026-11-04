@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-11-03T23:45:39.755Z",
+  "source": "https://api.squeekchain.com/v1/status",
+  "method": "Actual production WheelPoller; at most three observations in a 12-second bounded check. First reading is a baseline. Teardown reset omitted. No game room or client reward is created.",
+  "samples": [
+    {
+      "sequence": 1,
+      "energy": 0,
+      "view": {
+        "state": "baseline",
+        "text": "Wheel connected · setting a fresh baseline",
+        "observedAt": "2026-11-03T23:45:25.952Z",
+        "bonus": 0
+      }
+    },
+    {
+      "sequence": 2,
+      "energy": 0,
+      "view": {
+        "state": "resting",
+        "text": "Hamster resting · base recharge continues",
+        "observedAt": "2026-11-03T23:45:35.951Z",
+        "bonus": 0
+      }
+    },
+    {
+      "sequence": 3,
+      "energy": 0,
+      "view": {
+        "state": "resting",
+        "text": "Hamster resting · base recharge continues",
+        "observedAt": "2026-11-03T23:45:35.951Z",
+        "bonus": 0
+      }
+    }
+  ]
+}

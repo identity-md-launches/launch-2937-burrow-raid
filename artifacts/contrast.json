@@ -1,0 +1,53 @@
+{
+  "method": "WCAG relative-luminance calculation for declared solid token pairs. Canvas, gradients and alpha-composited pairs are not represented by these numbers.",
+  "pairs": [
+    {
+      "name": "Primary text",
+      "foreground": "#f5ead1",
+      "background": "#172b24",
+      "ratio": 12.49
+    },
+    {
+      "name": "Muted text",
+      "foreground": "#cfccb6",
+      "background": "#172b24",
+      "ratio": 9.21
+    },
+    {
+      "name": "Subtle text",
+      "foreground": "#a9b09e",
+      "background": "#172b24",
+      "ratio": 6.67
+    },
+    {
+      "name": "Primary button",
+      "foreground": "#29392a",
+      "background": "#edc78a",
+      "ratio": 7.67
+    },
+    {
+      "name": "Dialog text",
+      "foreground": "#f5ead1",
+      "background": "#233c30",
+      "ratio": 9.98
+    },
+    {
+      "name": "Warning text",
+      "foreground": "#ffda95",
+      "background": "#503e29",
+      "ratio": 7.62
+    },
+    {
+      "name": "Focus on forest",
+      "foreground": "#fff1be",
+      "background": "#172b24",
+      "ratio": 13.2
+    },
+    {
+      "name": "Focus on surface",
+      "foreground": "#fff1be",
+      "background": "#233c30",
+      "ratio": 10.55
+    }
+  ]
+}

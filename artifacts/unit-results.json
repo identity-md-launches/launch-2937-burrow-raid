@@ -1,0 +1,553 @@
+{
+  "numTotalTestSuites": 6,
+  "numPassedTestSuites": 6,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 45,
+  "numPassedTests": 45,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1793750593035,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules starts with explicit game energy and pauses in the lobby",
+          "status": "passed",
+          "title": "starts with explicit game energy and pauses in the lobby",
+          "duration": 4.220461,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules keeps live base recharge independent of telemetry",
+          "status": "passed",
+          "title": "keeps live base recharge independent of telemetry",
+          "duration": 1.4165179999999964,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules bounds diagonal movement, arena edges, invalid numbers and boss collision",
+          "status": "passed",
+          "title": "bounds diagonal movement, arena edges, invalid numbers and boss collision",
+          "duration": 4.640503000000024,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules fighter: basic attack is free, range-limited and cooldown-limited",
+          "status": "passed",
+          "title": "fighter: basic attack is free, range-limited and cooldown-limited",
+          "duration": 0.6480759999999464,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules fighter: skill costs shared energy and respects cooldown",
+          "status": "passed",
+          "title": "fighter: skill costs shared energy and respects cooldown",
+          "duration": 0.779233999999974,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules fighter: active cooperative pilot can win, restart is clean",
+          "status": "passed",
+          "title": "fighter: active cooperative pilot can win, restart is clean",
+          "duration": 28.635654000000045,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules guardian: basic attack is free, range-limited and cooldown-limited",
+          "status": "passed",
+          "title": "guardian: basic attack is free, range-limited and cooldown-limited",
+          "duration": 0.28314100000000053,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules guardian: skill costs shared energy and respects cooldown",
+          "status": "passed",
+          "title": "guardian: skill costs shared energy and respects cooldown",
+          "duration": 0.2646519999999555,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules guardian: active cooperative pilot can win, restart is clean",
+          "status": "passed",
+          "title": "guardian: active cooperative pilot can win, restart is clean",
+          "duration": 38.45124099999998,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules medic: basic attack is free, range-limited and cooldown-limited",
+          "status": "passed",
+          "title": "medic: basic attack is free, range-limited and cooldown-limited",
+          "duration": 0.31063800000003994,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules medic: skill costs shared energy and respects cooldown",
+          "status": "passed",
+          "title": "medic: skill costs shared energy and respects cooldown",
+          "duration": 0.22927900000001955,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules medic: active cooperative pilot can win, restart is clean",
+          "status": "passed",
+          "title": "medic: active cooperative pilot can win, restart is clean",
+          "duration": 21.90067499999998,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules does not allow unaffordable skills",
+          "status": "passed",
+          "title": "does not allow unaffordable skills",
+          "duration": 0.385532000000012,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules dodge is free, protects against a resolved attack and has a cooldown",
+          "status": "passed",
+          "title": "dodge is free, protects against a resolved attack and has a cooldown",
+          "duration": 0.3336140000000114,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules telegraphs synchronize a hit on resolution, then clear",
+          "status": "passed",
+          "title": "telegraphs synchronize a hit on resolution, then clear",
+          "duration": 0.5481869999999844,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules distinguishes circle, annulus and oriented sweep hit zones",
+          "status": "passed",
+          "title": "distinguishes circle, annulus and oriented sweep hit zones",
+          "duration": 0.29523599999993166,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules allows Medic to revive fallen allies",
+          "status": "passed",
+          "title": "allows Medic to revive fallen allies",
+          "duration": 0.1961149999999634,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules ends in defeat when all paws fall or the raid timer expires",
+          "status": "passed",
+          "title": "ends in defeat when all paws fall or the raid timer expires",
+          "duration": 0.7471669999999904,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "authoritative fight rules"
+          ],
+          "fullName": "authoritative fight rules does not advance completed fights",
+          "status": "passed",
+          "title": "does not advance completed fights",
+          "duration": 0.27793500000007043,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1793750593562,
+      "endTime": 1793750593668.2778,
+      "status": "passed",
+      "message": "",
+      "name": "tests/game.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms creates real shared rooms, syncs boss state, prevents teleporting and ignores client scores",
+          "status": "passed",
+          "title": "creates real shared rooms, syncs boss state, prevents teleporting and ignores client scores",
+          "duration": 317.4934149999999,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms caps real players at three and does not let a guest start the fight",
+          "status": "passed",
+          "title": "caps real players at three and does not let a guest start the fight",
+          "duration": 59.56912599999987,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms reconnects the same seat with a server-issued token and covers the absent paw",
+          "status": "passed",
+          "title": "reconnects the same seat with a server-issued token and covers the absent paw",
+          "duration": 89.77209799999991,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms awards wheel bonuses once per room, not once per player or duplicate batch",
+          "status": "passed",
+          "title": "awards wheel bonuses once per room, not once per player or duplicate batch",
+          "duration": 20.03796800000009,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms expires reconnect seats and cleans abandoned rooms",
+          "status": "passed",
+          "title": "expires reconnect seats and cleans abandoned rooms",
+          "duration": 55.15520700000002,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms latches a quick combat press across input packets without accepting extra damage",
+          "status": "passed",
+          "title": "latches a quick combat press across input packets without accepting extra damage",
+          "duration": 13.533105000000205,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms preserves host ownership during reconnect grace and transfers after expiry",
+          "status": "passed",
+          "title": "preserves host ownership during reconnect grace and transfers after expiry",
+          "duration": 68.42785900000013,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms baselines a new room and never banks wheel bonuses for an empty room",
+          "status": "passed",
+          "title": "baselines a new room and never banks wheel bonuses for an empty room",
+          "duration": 69.46390599999995,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms covers input stalls with a bot and returns control when fresh input resumes",
+          "status": "passed",
+          "title": "covers input stalls with a bot and returns control when fresh input resumes",
+          "duration": 6.340037999999822,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms rejects unauthorized reconnects and closes message floods",
+          "status": "passed",
+          "title": "rejects unauthorized reconnects and closes message floods",
+          "duration": 14.33160799999996,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real authoritative WebSocket rooms"
+          ],
+          "fullName": "real authoritative WebSocket rooms validates input shape, finite numbers and booleans",
+          "status": "passed",
+          "title": "validates input shape, finite numbers and booleans",
+          "duration": 1.0657900000001064,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1793750594045,
+      "endTime": 1793750594761.0657,
+      "status": "passed",
+      "message": "",
+      "name": "tests/rooms.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting baselines first, then uses BigInt positive deltas exactly once",
+          "status": "passed",
+          "title": "baselines first, then uses BigInt positive deltas exactly once",
+          "duration": 7.469327000000021,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting caps huge jumps before converting to Number and bounds bursts",
+          "status": "passed",
+          "title": "caps huge jumps before converting to Number and bounds bursts",
+          "duration": 0.6570369999999457,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting carries fractional work without duplicating it",
+          "status": "passed",
+          "title": "carries fractional work without duplicating it",
+          "duration": 0.5533609999999953,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting resets on epoch change, installation change and counter regression",
+          "status": "passed",
+          "title": "resets on epoch change, installation change and counter regression",
+          "duration": 1.4677420000000438,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting rejects reused timestamps with changed counters and out-of-order bonus",
+          "status": "passed",
+          "title": "rejects reused timestamps with changed counters and out-of-order bonus",
+          "duration": 0.6149130000000014,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting rejects unsupported schemas, bad UUIDs, invalid counters and missing required fields",
+          "status": "passed",
+          "title": "rejects unsupported schemas, bad UUIDs, invalid counters and missing required fields",
+          "duration": 0.5641190000000051,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting does not award previously counted work after an out-of-order or regressed reading",
+          "status": "passed",
+          "title": "does not award previously counted work after an out-of-order or regressed reading",
+          "duration": 1.0346150000000307,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting allows additive v1 fields but rejects simulated/replayed/derived measurements",
+          "status": "passed",
+          "title": "allows additive v1 fields but rejects simulated/replayed/derived measurements",
+          "duration": 0.8469470000000001,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting rejects stale, future, faulted and unavailable readings, then baselines recovery",
+          "status": "passed",
+          "title": "rejects stale, future, faulted and unavailable readings, then baselines recovery",
+          "duration": 1.0248559999999998,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting does not award sleeping work and resumes without a catch-up bonus",
+          "status": "passed",
+          "title": "does not award sleeping work and resumes without a catch-up bonus",
+          "duration": 0.47046499999999014,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting baselines after an HTTP reconnect or reset",
+          "status": "passed",
+          "title": "baselines after an HTTP reconnect or reset",
+          "duration": 0.22852399999999307,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting parses numeric and HTTP-date Retry-After without shortening the wait",
+          "status": "passed",
+          "title": "parses numeric and HTTP-date Retry-After without shortening the wait",
+          "duration": 0.3624340000000075,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting honors Retry-After and exponential backoff, without overlapping polls",
+          "status": "passed",
+          "title": "honors Retry-After and exponential backoff, without overlapping polls",
+          "duration": 8.253690000000006,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting revalidates cached 304 timestamps instead of awarding cached work",
+          "status": "passed",
+          "title": "revalidates cached 304 timestamps instead of awarding cached work",
+          "duration": 11.626529000000005,
+          "failureMessages": [],
+          "meta": {}
+        },
+        {
+          "ancestorTitles": [
+            "real wheel work accounting"
+          ],
+          "fullName": "real wheel work accounting discards an old in-flight request after a stop/restart without spawning another poll loop",
+          "status": "passed",
+          "title": "discards an old in-flight request after a stop/restart without spawning another poll loop",
+          "duration": 1.9674679999999398,
+          "failureMessages": [],
+          "meta": {}
+        }
+      ],
+      "startTime": 1793750593914,
+      "endTime": 1793750593950.9675,
+      "status": "passed",
+      "message": "",
+      "name": "tests/telemetry.test.ts"
+    }
+  ]
+}
